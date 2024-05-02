@@ -20,7 +20,8 @@
             </div>
             -->
         </div>
-        <button onclick="startGame()" style="font-size: 30px;">Start Game</button>
+        <button onclick="randomCharacterSelect();startGame();deleteButtons();" id="random">Select Random</button>
+        <button onclick="startGame();" style="font-size: 30px;" id="start">Start Game</button>
         <div id="game">
             <h2>Game Board</h2>
             <div class="board">

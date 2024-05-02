@@ -1,6 +1,11 @@
 let selectedCharacter = null;
 let clickedp = []
 
+function deleteButtons() {
+    document.querySelector('#random').hidden = true
+    document.querySelector('#start').hidden = true
+}
+
 function toggleSelection(element) {
     if (selectedCharacter !== null) {
         selectedCharacter.classList.remove("selected");
@@ -9,22 +14,28 @@ function toggleSelection(element) {
     selectedCharacter.classList.add("selected");
 }
 
-    const charactersBoard = document.querySelector(".characters");
-    charactersBoard.innerHTML = "";
+function getRandomCharacter() {
+    const characters = document.querySelectorAll(".character");
+    const randomIndex = Math.floor(Math.random() * characters.length);
+    return characters[randomIndex];
+}
 
-    for (let i = 1; i <= 24; i++) {
-        const names = ["Basil", "Melvin", "Hannah", "Simone", "Ian", "Isla", "Rupert", "Maggie", "Susan", "Natalie", "Kim", "Jamal", "Joshua", "Xiao Mei", "Jennifer", "Brian", "Gary", "Martine", "Bill", "Roy", "Edna", "Mo", "Kelly", "Pete"];
-        const characterDiv = document.createElement("div");
-        characterDiv.classList.add("character");
-        characterDiv.innerHTML = `
-            <img src="./IMG/faces/character${i}.png" alt="${names[i-1]}">
-            <p>${names[i-1]}</p>
-        `;
-        characterDiv.onclick = function() {
-            toggleSelection(characterDiv)
-        };
-        charactersBoard.appendChild(characterDiv);
-    }
+const charactersBoard = document.querySelector(".characters");
+charactersBoard.innerHTML = "";
+
+for (let i = 1; i <= 24; i++) {
+    const names = ["Basil", "Melvin", "Hannah", "Simone", "Ian", "Isla", "Rupert", "Maggie", "Susan", "Natalie", "Kim", "Jamal", "Joshua", "Xiao Mei", "Jennifer", "Brian", "Gary", "Martine", "Bill", "Roy", "Edna", "Mo", "Kelly", "Pete"];
+    const characterDiv = document.createElement("div");
+    characterDiv.classList.add("character");
+    characterDiv.innerHTML = `
+        <img src="./IMG/faces/character${i}.png" alt="${names[i-1]}">
+        <p>${names[i-1]}</p>
+    `;
+    characterDiv.onclick = function() {
+        toggleSelection(characterDiv)
+    };
+    charactersBoard.appendChild(characterDiv);
+}
 
 
 function startGame() {
@@ -82,7 +93,14 @@ function startGame() {
         gameBoard.appendChild(characterDiv);
     }
 
+    deleteButtons()
+
     // Scroll to game board
     document.getElementById("game").scrollIntoView({ behavior: 'smooth' });
+}
+
+function randomCharacterSelect() {
+    const randomCharacter = getRandomCharacter();
+    toggleSelection(randomCharacter);
 }
 
