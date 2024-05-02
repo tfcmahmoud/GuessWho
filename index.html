@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess Who Game</title>
+    <link rel="stylesheet" href="./CSS/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Guess Who Game</h1>
+        <p>Pick your character:</p>
+        <div class="characters">
+            
+            <!-- Add more characters here -->
+            <!-- Example:
+            <div class="character" onclick="toggleSelection(this)">
+                <img src="character2.jpg" alt="Character 2">
+                <p>Character 2</p>
+            </div>
+            -->
+        </div>
+        <button onclick="startGame()" style="font-size: 30px;">Start Game</button>
+        <div id="game">
+            <h2>Game Board</h2>
+            <div class="board">
+                <!-- Characters will be dynamically generated here -->
+            </div>
+        </div>
+    </div>
+    <center>
+    <button onclick="location.reload()" id="reload">Restart</button>
+    </center>
+    <script src="./JS/script.js"></script>
+</body>
+</html>
