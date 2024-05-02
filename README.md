@@ -1,2 +1,2 @@
 # GuessWho
-Made this to deploy a website :)
+[Website to the game :)](https://tfcmahmoud.github.io/GuessWho/)
