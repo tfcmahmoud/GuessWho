@@ -100,6 +100,11 @@ function startGame() {
         el.hidden = true;
     })
     document.getElementById('chosen').textContent = 'Your Character Is:'
+    document.querySelector('.character.selected p').style = `
+    font-weight: bold;
+    color: greenyellow;
+    font-size: 50px;
+    `
 
     // Scroll to game board
     document.getElementById("game").scrollIntoView({ behavior: 'smooth' });
