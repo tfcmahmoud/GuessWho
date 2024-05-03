@@ -28,7 +28,7 @@ for (let i = 1; i <= 24; i++) {
     characterDiv.classList.add("character");
     characterDiv.innerHTML = `
         <img src="./IMG/faces/character${i}.png" alt="${names[i-1]}">
-        <p>${names[i-1]}</p>
+        <p style='color: #fff;'>${names[i-1]}</p>
     `;
     characterDiv.onclick = function() {
         toggleSelection(characterDiv)
@@ -71,20 +71,20 @@ function startGame() {
         characterDiv.id = names[i-1]
         characterDiv.innerHTML = `
             <img src="./IMG/faces/character${i}.png" alt="${names[i-1]}" id="${names[i-1]}">
-            <p>${names[i-1]}</p>
+            <p style='color: #fff;'>${names[i-1]}</p>
         `;
         characterDiv.onclick = function() {
             if (clickedp.includes(this.id)) {
                 characterDiv.innerHTML = `
                 <img src="./IMG/faces/character${i}.png" alt="${this.id}">
-                <p>${this.id}</p>
+                <p style='color: #fff;'>${this.id}</p>
                 `;
                 clickedp = clickedp.filter(e => e !== this.id)
                 
             } else {
                 characterDiv.innerHTML = `
                 <img src="./IMG/pressed.png" alt="${this.id}">
-                <p>${this.id}</p>
+                <p style='color: #fff;'>${this.id}</p>
                 `;
                 clickedp.push(this.id)
             }
