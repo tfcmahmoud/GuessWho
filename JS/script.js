@@ -2,8 +2,7 @@ let selectedCharacter = null;
 let clickedp = []
 
 function deleteButtons() {
-    document.querySelector('#random').hidden = true
-    document.querySelector('#start').hidden = true
+    document.querySelector('#hidebuttons').hidden = true
 }
 
 function toggleSelection(element) {
@@ -94,6 +93,13 @@ function startGame() {
     }
 
     deleteButtons()
+    document.querySelectorAll(".afterstart").forEach(el => {
+        el.hidden = false;
+    })
+    document.querySelectorAll(".hideafterstart").forEach(el => {
+        el.hidden = true;
+    })
+    document.getElementById('chosen').textContent = 'Your Character Is:'
 
     // Scroll to game board
     document.getElementById("game").scrollIntoView({ behavior: 'smooth' });

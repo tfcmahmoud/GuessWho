@@ -8,8 +8,8 @@
 </head>
 <body>
     <div class="container">
-        <h1>Guess Who Game</h1>
-        <p>Pick your character:</p>
+        <h1 style="font-size: 100px;">Guess Who Game</h1>
+        <p id="chosen">Pick your character:</p>
         <div class="characters">
             
             <!-- Add more characters here -->
@@ -20,17 +20,19 @@
             </div>
             -->
         </div>
-        <button onclick="randomCharacterSelect();startGame();" id="random">Select Random</button>
-        <button onclick="startGame();" style="font-size: 30px;" id="start">Start Game</button>
-        <div id="game">
+        <center id="hidebuttons">
+            <button onclick="randomCharacterSelect();startGame();" class="button" id="random">Select Random</button>
+            <button onclick="startGame();" class="button" id="start">Start Game</button>
+        </center>
+        <div id="game" class="afterstart" hidden>
             <h2>Game Board</h2>
             <div class="board">
                 <!-- Characters will be dynamically generated here -->
             </div>
         </div>
     </div>
-    <center>
-    <button onclick="location.reload()" id="reload">Restart</button>
+    <center class="afterstart" hidden>
+        <button onclick="location.reload()" id="reload" class="button">Restart</button>
     </center>
     <script src="./JS/script.js"></script>
 </body>
